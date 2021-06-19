@@ -2,14 +2,14 @@ SET MBT=%GOPATH%\src\github.com\mbtproject\mbt
 SET LIBGIT2_PATH=%MBT%\libgit2
 SET OS=windows
 SET ARCH=x86
-set OUT="mbt.exe"
+SET OUT="mbt.exe"
 
 go version
 
 cd %LIBGIT2_PATH%
-mkdir -p install/lib
-mkdir build
-cd build
+@REM mkdir -p install/lib
+@REM mkdir build
+@REM cd build
 cmake -DTHREADSAFE=ON -DBUILD_CLAR=OFF -DBUILD_SHARED_LIBS=ON -DCMAKE_C_FLAGS=-fPIC -DCMAKE_INSTALL_PREFIX=../install -DUSE_SSH=OFF -DCURL=OFF ..
 
 cmake --build .
