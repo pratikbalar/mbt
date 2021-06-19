@@ -41,9 +41,8 @@ jobs:
       - name: Build for Windows
         if: startsWith(matrix.os, 'windows-')
         # shell: pwsh
-        working-directory: "%SYSTEMDRIVE%\gopath\src\github.com\mbtproject\mbt"
+        # working-directory: "%SYSTEMDRIVE%\gopath\src\github.com\mbtproject\mbt"
         run: |
-          %SYSTEMDRIVE%\gopath\src\github.com\mbtproject\mbt
           mkdir %SYSTEMDRIVE%\downloads
           mkdir %SYSTEMDRIVE%\go386
           curl -L -o %SYSTEMDRIVE%\downloads\pkg-config_0.26-1_win32.zip http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/pkg-config_0.26-1_win32.zip
