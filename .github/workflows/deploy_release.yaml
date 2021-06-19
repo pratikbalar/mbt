@@ -40,7 +40,7 @@ jobs:
 
       - name: Build for Windows
         if: startsWith(matrix.os, 'windows-')
-        # shell: pwsh
+        shell: pwsh
         # working-directory: "%SYSTEMDRIVE%\gopath\src\github.com\mbtproject\mbt"
         run: |
           mkdir %SYSTEMDRIVE%\downloads
@@ -55,7 +55,7 @@ jobs:
           7z x %SYSTEMDRIVE%\downloads\go.zip -o%SYSTEMDRIVE%\go386\
           SET GOROOT=%SYSTEMDRIVE%\go386\go
           SET GOPATH=%SYSTEMDRIVE%\gopath
-          SET PATH=%SYSTEMDRIVE%\bin;%SYSTEMDRIVE%\MinGW\bin;%SYSTEMDRIVE%\go386\go\bin;%PATH%
+          SET PATH=%SYSTEMDRIVE%\bin;%SYSTEMDRIVE%\go386\go\bin;%PATH%
           ./scripts/build_win.bat
   # install-upload:
   #   name: Build
